@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scisors Game</title>
+</head>
+<body>
+    <script>
+        /*Codigo del juego Piedra papel o tijeras */
+        /*Pasos o funciones necesarias */
+        // Crear opciones : Piedra / Papel / Tijera
+        // Computadora elige opcion
+        // Jugador elige opcion
+        // Mostrar resultados de partida
+        // Piedra gana a tijera
+        // Tijera gana a papel
+        // Papel gana a piedra
+        // Mostar resultado segun que elige cada jugador
+        
+        const choices = ["Rock", "Paper","Scissors"] //Array donde estan las jugadas posibles
+        function getComputerChoice() {
+            const randomIndex = Math.floor(Math.random() * choices.length); // El "*Choices.length" hace que eliga un string de las opciones
+            const computerChoice = choices[randomIndex]; // Buscar la opcion en el Array
+            return computerChoice; 
+        }
+
+        let playerScore = 0
+        let computerScore = 0
+
+        function playRound(playerSelection, computerSelection) {
+            // Como determinar el ganador
+            //Esta es una forma de solucion
+             /*   if (
+                  (playerSelection === "Paper" && computerSelection === "Rock") ||
+                  (playerSelection === "Rock" && computerSelection === "Scissors") ||
+                  (playerSelection === "Scissors" && computerSelection === "Paper")
+                ) {
+                  return "Player Wins! " + playerSelection + " beats " + computerSelection;
+                } else if (
+                  (playerSelection === "Rock" && computerSelection === "Paper") ||
+                  (playerSelection === "Paper" && computerSelection === "Scissors") ||
+                  (playerSelection === "Scissors" && computerSelection === "Rock")
+                ) {
+                  return "Player Loses! " + computerSelection + " beats " + playerSelection;
+                } else if (playerSelection === computerSelection) {
+                  return "It's a tie! Both select the same";
+                } else {
+                  return "Invalid input. Please choose Rock, Paper, or Scissors";
+                }
+              } */ 
+
+              //Esta es mi Solucion
+            if (playerSelection === "Paper" && computerSelection === "Rock") {
+                playerScore++;
+                return("Player Wins! Paper beats Rock");
+                
+            }
+            else if (playerSelection === "Rock" && computerSelection === "Scissors") {
+                playerScore++;
+                return("Player Wins! Rock beats Scisors")     
+            }
+            else if(playerSelection === "Scissors" && computerSelection === "Paper") {
+                playerScore++;
+                return("Player Wins! Scisors beats Paper");
+            }
+            else if (playerSelection === "Rock" && computerSelection === "Paper") {
+                computerScore++;
+                return("Player Lose! Paper beats Rock");
+                
+            }
+            else if(playerSelection === "Paper" && computerSelection === "Scissors") {
+                computerScore++;
+                return("Player Lose! Scisors beat Rock");
+                
+            }
+            else if (playerSelection === "Scissors" && computerSelection === "Rock") {
+                computerScore++;
+                return("Player Lose! Rock beats Scisors");
+            }
+            else if (playerSelection === computerSelection) {
+                return("It's a tie! Both select the same");
+            }
+            else {
+                return("Invalid input. Please choose Rock, Paper, or Scissors")
+            }
+          } 
+
+          
+          console.log("Bienvenido al juego PIEDRA, PAPEL o TIJERA");
+          console.log("-------------------------------------------");
+          /*function game() { // regla que indica que se debe jugar al mejor de 5 rondas. quien suma 3 puntos gana.
+            do playRound();
+            while (playerScore < 3 || computerScore < 3); //condicion para que se juege varias veces
+            if (playerScore ===3) { // resultado si gana player
+                console.log("player wins the game");
+            }
+            if (computerScore ===3) { // resultado si gana computer
+                console.log("computerScore wins the game");
+            }
+            } */ //esta es mi solucion.
+
+            //esta es chatgpt solucion para game
+            function game() {
+                while (playerScore < 3 && computerScore < 3) {
+                    const playerSelection = prompt("What is Player is choice? Rock, Paper or Scissors?"); // Puedes cambiar esto para que el jugador haga una selección
+                    const computerSelection = getComputerChoice();
+                    const roundResult = playRound(playerSelection, computerSelection);
+                    //Resultados y elecciones por ronda: 
+                    console.log("Player's selection: " + playerSelection);
+                    console.log("Computer's selection: " + computerSelection);           
+                    console.log(roundResult);
+                    console.log("Player's score: " + playerScore);
+                    console.log("Computer's score: " + computerScore);
+                    console.log("------------------------")
+                }
+            
+                if (playerScore >= 3) {
+                    console.log("Player wins the game");
+                } else {
+                    console.log("Computer wins the game");
+                }
+            }
+
+
+            game();
+            
+    </script>
+</body>
+</html>
