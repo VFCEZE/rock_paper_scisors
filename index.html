@@ -86,6 +86,12 @@
             }
           } 
 
+          function getPlayerChoice() { //funcion para homogenizar respuestas del jugador.
+            let input = prompt("Choose between Rock, Paper or Scissors?").toLowerCase();
+            input = input.charAt(0).toUpperCase() + input.slice(1); // Capitaliza la primera letra
+            return input;
+        }
+        
           
           console.log("Bienvenido al juego PIEDRA, PAPEL o TIJERA");
           console.log("-------------------------------------------");
@@ -103,7 +109,7 @@
             //esta es chatgpt solucion para game
             function game() {
                 while (playerScore < 3 && computerScore < 3) {
-                    const playerSelection = prompt("What is Player is choice? Rock, Paper or Scissors?"); // Puedes cambiar esto para que el jugador haga una selección
+                    const playerSelection = getPlayerChoice(); // Puedes cambiar esto para que el jugador haga una selección
                     const computerSelection = getComputerChoice();
                     const roundResult = playRound(playerSelection, computerSelection);
                     //Resultados y elecciones por ronda: 
