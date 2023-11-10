@@ -1,0 +1,85 @@
+
+
+body {
+    background-color: #151931;
+    color: WHITE;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.get-selections > h3 {
+margin: 2px none;
+}
+
+.p-choice > p , .c-choice >p {
+    margin: 4px 0px
+}
+
+.get-selections > p {
+    margin:  0;
+}
+
+.instructions-container > h3 {
+    margin: 10px 15px;
+    background-color: #3d3f5b;
+}
+
+.instrucciones {
+    display: none;
+    color: #c8b39e;
+    margin:  5px 10px
+}
+
+.btn-container, .score-container  {
+    border: 3px #3d3f5b solid;
+    padding : 10px 20px;
+    margin-top: 5px;
+    border-radius:  25px;
+    display: flex;
+    flex-direction: column;
+    min-width: 240px;
+}
+
+.get-selections {
+    border: 3px #3d3f5b solid;
+    padding : 10px 20px;
+    margin-top: 5px;
+    border-radius:  25px;
+    display: flex;
+    flex-direction: column;
+    min-width: 240px;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+button {
+    margin: 5px 5px;
+    border-radius: 5px;
+    background-color: white;
+    border: white 1px;
+    font-size: 20px;
+    flex: 0
+}
+
+.get-selections > div {
+    display: flex;
+    flex-direction: row;
+    
+} 
+
+.score-container > * {
+    margin-top: 4px;
+    margin-bottom: 4px
+}
+
+
+
+
+
+
+
+
