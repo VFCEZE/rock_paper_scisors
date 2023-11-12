@@ -1,5 +1,4 @@
 
-
 body {
     background-color: #151931;
     color: WHITE;
@@ -8,6 +7,11 @@ body {
     justify-content: center;
     align-items: center;
     
+}
+
+h1 {
+    margin-bottom: 0px;
+    margin-top: 4px;
 }
 
 .get-selections > h3 {
@@ -76,8 +80,36 @@ button {
     margin-bottom: 4px
 }
 
+.footer {
+    background-color: black;
+    height: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin: 0;
+    margin-top: 10px;
+    padding: 0;
+    gap: 20%;
+    
+}
 
+.footer > h4 {
+    
+    flex-grow: 1;
+    text-align: right;
+}
 
+img {
+    height: 28px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    margin-right: 20%;
+}
 
 
 
